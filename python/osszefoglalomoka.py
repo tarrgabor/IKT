@@ -2,7 +2,7 @@ from tkinter import *
 ablak=Tk()
 ablak.config()
 
-gyoker = 'H:\\ikt project munka\\python\\'
+gyoker = 'H:\\ikt project munka\\python\\képek\\'
 ablak.geometry('400x200')
 
 icon = PhotoImage(file=gyoker+'icon.png')
@@ -10,10 +10,10 @@ ablak.iconphoto(True, icon)
 
 
 
-can1=Canvas(ablak, width=200, height=200, bg ='white')
-photo = PhotoImage(file="lightbulb.png")
-item=can1.create_image(100, 100, image=photo)
-can1.grid(row=1, column=3 , rowspan=4)
+can1=Canvas(ablak, width=180, height=180, bg ='white')
+photo = PhotoImage(file=gyoker+"lightbulb.png")
+item=can1.create_image(80, 80, image=photo)
+can1.grid(row=1, column=3 , rowspan=3)
 
 
 cimke=Label(ablak, text="Első mező:")

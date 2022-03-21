@@ -89,8 +89,10 @@ cimke.grid(row=10, column=0,)
 mezo3=Entry(foablak)
 mezo3.grid(row=10, column=1)
 
-can1=Canvas(foablak, width=200, height=200, bg ='white')
-photo = PhotoImage(file="a.gif")
+gyoker = 'H:\\ikt project munka\\python\\képek\\'
+
+can1=Canvas(foablak, width=300, height=300, bg ='white')
+photo = PhotoImage(file=gyoker+"a.gif")
 item=can1.create_image(100, 200, image=photo)
 can1.grid(row=11, column=1)
 

@@ -4,7 +4,7 @@ ablak1=Tk()
 def klikk():
     print("Klikkeltem")
 
-gyoker = 'H:\\ikt project munka\\python\\'
+gyoker = 'H:\\ikt project munka\\python\\képek\\'
 ablak1.geometry('450x450')
 ablak1.title('IKT Tkinter')
 icon = PhotoImage(file=gyoker+'icon.png')
