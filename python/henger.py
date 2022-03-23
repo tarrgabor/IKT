@@ -6,11 +6,22 @@ def terfogat():
     a = int(mezo1.get())
     b = int(mezo2.get())
     c = a**2*math.pi*b
+    fa = 0.66*c
+    vas = 7.874*c
     mezo3.delete(0, END)
-    mezo3.insert(0,str(c)+"cm3")
+    mezo3.insert(0,str(round(c, 2))+" cm3")
+    mezo4.delete(0, END)
+    mezo4.insert(0,str(round(fa, 2))+" g")
+    mezo5.delete(0, END)
+    mezo5.insert(0,str(round(vas, 2))+" g")
 
 foablak=Tk()
 foablak.config()
+
+gyoker = 'H:\\ikt project munka\\python\\képek\\'
+icon = PhotoImage(file=gyoker+'log-cartoon-png-6.png')
+foablak.iconphoto(True, icon)
+
 
 cimke=Label(foablak, text="Sugár (cm):")
 cimke.grid(row= 1, column=0, sticky='e')
