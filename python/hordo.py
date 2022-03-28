@@ -2,28 +2,26 @@ import math
 
 from tkinter import *
 
-
 def terfogat():
-    bor = int(mezo1.get())
-    a = int(mezo2.get())
-    b = int(mezo3.get())
+    bor =int(mezo1.get())
+    a = int(mezo1.get())
+    b = int(mezo2.get())
     c = a**2*math.pi*b
     liter = c*0.01
-    belefer = c*b
+    belefer = a*b
     mennyi = a*b
-    telitettseg = c*a
+    telitettseg = a*b*c
     mezo4.delete(0, END)
     mezo4.insert(0,str(round(c, 2))+" cm3")
     mezo5.delete(0, END)
     mezo5.insert(0,str(round(liter, 2))+" l")
     mezo6.delete(0, END)
-    mezo6.insert(0,str(round(belefer))
+    mezo6.insert(0,str(round(belefer, 2))+" l")
     mezo7.delete(0, END)
-    mezo7.insert(0,str(round(belefer))
+    mezo7.insert(0,str(round(mennyi, 2))+" l")
     mezo8.delete(0, END)
-    mezo8.insert(0,str(round(mennyi, 2))+" l")
-    mezo9.delete(0, END)
-    mezo9.insert(0,str(round(telitettseg, 2))+" %")
+    mezo8.insert(0,str(round(telitettseg, 2))+" %")
+
 foablak=Tk()
 foablak.config()
 
@@ -53,38 +51,28 @@ cimke.grid(row=4, column=0, sticky='e')
 mezo3=Entry(foablak)
 mezo3.grid(row=4, column=1)
 
-cimke=Label(foablak, text="Fahenger:")
+cimke=Label(foablak, text="Liter:")
 cimke.grid(row=5, column=0, sticky='e')
 
 mezo4=Entry(foablak)
 mezo4.grid(row=5, column=1)
 
-cimke=Label(foablak, text="Vashenger")
-cimke.grid(row=6, column=0, sticky='e') 
+cimke=Label(foablak, text="Belefér e a bor?")
+cimke.grid(row=6, column=0, sticky='e')
 
-mezo6=Entry(foablak)
-mezo6.grid(row=7, column=1)
+mezo5=Entry(foablak)
+mezo5.grid(row=6, column=1)
 
-cimke=Label(foablak, text="Vashenger")
-cimke.grid(row=7, column=0, sticky='e') 
+cimke=Label(foablak, text="Mennyi hely maradt még benne?")
+cimke.grid(row=7, column=0, sticky='e')
 
-mezo7=Entry(foablak)
-mezo.grid(row=7, column=1)
+mezo5=Entry(foablak)
+mezo5.grid(row=7, column=1)
 
-cimke=Label(foablak, text="Vashenger")
-cimke.grid(row=7, column=0, sticky='e') 
+cimke=Label(foablak, text="Telítettség")
+cimke.grid(row=8, column=0, sticky='e')
 
-mezo7=Entry(foablak)
-mezo7.grid(row=8, column=1)
-
-cimke=Label(foablak, text="Vashenger")
-cimke.grid(row=8, column=0, sticky='e') 
-
-mezo8=Entry(foablak)
-mezo8.grid(row=9, column=1)
-
-mezo9=Entry(foablak)
-mezo9.grid(row=9, column=1)
-
+mezo5=Entry(foablak)
+mezo5.grid(row=8, column=1)
 
 foablak.mainloop()

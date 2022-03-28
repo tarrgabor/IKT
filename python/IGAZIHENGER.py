@@ -2,28 +2,19 @@ import math
 
 from tkinter import *
 
-
 def terfogat():
-    bor = int(mezo1.get())
-    a = int(mezo2.get())
-    b = int(mezo3.get())
+    a = int(mezo1.get())
+    b = int(mezo2.get())
     c = a**2*math.pi*b
-    liter = c*0.01
-    belefer = c*b
-    mennyi = a*b
-    telitettseg = c*a
+    fa = 0.66*c
+    vas = 7.874*c
+    mezo3.delete(0, END)
+    mezo3.insert(0,str(round(c, 2))+" cm3")
     mezo4.delete(0, END)
-    mezo4.insert(0,str(round(c, 2))+" cm3")
+    mezo4.insert(0,str(round(fa, 2))+" g")
     mezo5.delete(0, END)
-    mezo5.insert(0,str(round(liter, 2))+" l")
-    mezo6.delete(0, END)
-    mezo6.insert(0,str(round(belefer))
-    mezo7.delete(0, END)
-    mezo7.insert(0,str(round(belefer))
-    mezo8.delete(0, END)
-    mezo8.insert(0,str(round(mennyi, 2))+" l")
-    mezo9.delete(0, END)
-    mezo9.insert(0,str(round(telitettseg, 2))+" %")
+    mezo5.insert(0,str(round(vas, 2))+" g")
+
 foablak=Tk()
 foablak.config()
 
@@ -62,29 +53,8 @@ mezo4.grid(row=5, column=1)
 cimke=Label(foablak, text="Vashenger")
 cimke.grid(row=6, column=0, sticky='e') 
 
-mezo6=Entry(foablak)
-mezo6.grid(row=7, column=1)
-
-cimke=Label(foablak, text="Vashenger")
-cimke.grid(row=7, column=0, sticky='e') 
-
-mezo7=Entry(foablak)
-mezo.grid(row=7, column=1)
-
-cimke=Label(foablak, text="Vashenger")
-cimke.grid(row=7, column=0, sticky='e') 
-
-mezo7=Entry(foablak)
-mezo7.grid(row=8, column=1)
-
-cimke=Label(foablak, text="Vashenger")
-cimke.grid(row=8, column=0, sticky='e') 
-
-mezo8=Entry(foablak)
-mezo8.grid(row=9, column=1)
-
-mezo9=Entry(foablak)
-mezo9.grid(row=9, column=1)
+mezo5=Entry(foablak)
+mezo5.grid(row=6, column=1)
 
 
 foablak.mainloop()
