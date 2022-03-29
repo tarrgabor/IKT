@@ -8,19 +8,22 @@ def terfogat():
     b = int(mezo2.get())
     c = a**2*math.pi*b
     liter = c*0.01
-    belefer = a*b
+    if bor <= liter:
+        mezo5.delete(0, END)
+        mezo5.insert(0,"Belefér")
+    else:
+        mezo5.delete(0, END)
+        mezo5.insert(0,"Nem fér bele")
     mennyi = a*b
-    telitettseg = a*b*c
+    telitettseg = a*b*c*liter
+    mezo3.delete(0, END)
+    mezo3.insert(0,str(round(c, 0))+" cm3")
     mezo4.delete(0, END)
-    mezo4.insert(0,str(round(c, 2))+" cm3")
-    mezo5.delete(0, END)
-    mezo5.insert(0,str(round(liter, 2))+" l")
+    mezo4.insert(0,str(round(liter, 0))+" l")
     mezo6.delete(0, END)
-    mezo6.insert(0,str(round(belefer, 2))+" l")
+    mezo6.insert(0,str(round(mennyi, 0))+" l")
     mezo7.delete(0, END)
-    mezo7.insert(0,str(round(mennyi, 2))+" l")
-    mezo8.delete(0, END)
-    mezo8.insert(0,str(round(telitettseg, 2))+" %")
+    mezo7.insert(0,str(round(telitettseg, 0))+" %")
 
 foablak=Tk()
 foablak.config()
@@ -29,6 +32,11 @@ gyoker = 'H:\\ikt project munka\\python\\képek\\'
 icon = PhotoImage(file=gyoker+'log-cartoon-png-6.png')
 foablak.iconphoto(True, icon)
 
+cimke=Label(foablak, text="Bor(L):")
+cimke.grid(row= 0, column=0, sticky='e')
+
+mezo0=Entry(foablak)
+mezo0.grid(row=0, column=1)
 
 cimke=Label(foablak, text="Sugár (cm):")
 cimke.grid(row= 1, column=0, sticky='e')
@@ -66,13 +74,13 @@ mezo5.grid(row=6, column=1)
 cimke=Label(foablak, text="Mennyi hely maradt még benne?")
 cimke.grid(row=7, column=0, sticky='e')
 
-mezo5=Entry(foablak)
-mezo5.grid(row=7, column=1)
+mezo6=Entry(foablak)
+mezo6.grid(row=7, column=1)
 
 cimke=Label(foablak, text="Telítettség")
 cimke.grid(row=8, column=0, sticky='e')
 
-mezo5=Entry(foablak)
-mezo5.grid(row=8, column=1)
+mezo7=Entry(foablak)
+mezo7.grid(row=8, column=1)
 
 foablak.mainloop()

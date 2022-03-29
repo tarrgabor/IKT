@@ -53,38 +53,30 @@ cimke.grid(row=4, column=0, sticky='e')
 mezo3=Entry(foablak)
 mezo3.grid(row=4, column=1)
 
-cimke=Label(foablak, text="Fahenger:")
+cimke=Label(foablak, text="Liter")
 cimke.grid(row=5, column=0, sticky='e')
 
 mezo4=Entry(foablak)
 mezo4.grid(row=5, column=1)
 
-cimke=Label(foablak, text="Vashenger")
+cimke=Label(foablak, text="Belefér e?")
 cimke.grid(row=6, column=0, sticky='e') 
 
 mezo6=Entry(foablak)
 mezo6.grid(row=7, column=1)
 
-cimke=Label(foablak, text="Vashenger")
+cimke=Label(foablak, text="Mennyi hely maradt?")
 cimke.grid(row=7, column=0, sticky='e') 
 
 mezo7=Entry(foablak)
 mezo.grid(row=7, column=1)
 
-cimke=Label(foablak, text="Vashenger")
+cimke=Label(foablak, text="Telitettsége:")
 cimke.grid(row=7, column=0, sticky='e') 
 
-mezo7=Entry(foablak)
-mezo7.grid(row=8, column=1)
-
-cimke=Label(foablak, text="Vashenger")
-cimke.grid(row=8, column=0, sticky='e') 
-
 mezo8=Entry(foablak)
-mezo8.grid(row=9, column=1)
+mezo8.grid(row=8, column=1)
 
-mezo9=Entry(foablak)
-mezo9.grid(row=9, column=1)
 
 
 foablak.mainloop()
