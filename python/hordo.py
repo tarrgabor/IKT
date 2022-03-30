@@ -7,21 +7,21 @@ def terfogat():
     a = int(mezo1.get())
     b = int(mezo2.get())
     c = a**2*math.pi*b
-    liter = c*0.01
-    if bor <= liter:
-        mezo5.delete(0, END)
-        mezo5.insert(0,"Belefér")
-    else:
+    liter = c*0.001
+    if liter <= bor:
         mezo5.delete(0, END)
         mezo5.insert(0,"Nem fér bele")
-    mennyi = a*b
+    else:
+        mezo5.delete(0, END)
+        mezo5.insert(0,"Belefér")
+    mennyi = liter-bor/10
     telitettseg = a*b*c*liter
     mezo3.delete(0, END)
     mezo3.insert(0,str(round(c, 0))+" cm3")
     mezo4.delete(0, END)
     mezo4.insert(0,str(round(liter, 0))+" l")
     mezo6.delete(0, END)
-    mezo6.insert(0,str(round(mennyi, 0))+" l")
+    mezo6.insert(0,str(round(mennyi))+" l")
     mezo7.delete(0, END)
     mezo7.insert(0,str(round(telitettseg, 0))+" %")
 
@@ -65,7 +65,7 @@ cimke.grid(row=5, column=0, sticky='e')
 mezo4=Entry(foablak)
 mezo4.grid(row=5, column=1)
 
-cimke=Label(foablak, text="Belefér e a bor?")
+cimke=Label(foablak, text="Belefér-e a bor?")
 cimke.grid(row=6, column=0, sticky='e')
 
 mezo5=Entry(foablak)
