@@ -6,22 +6,20 @@ def terfogat():
     bor =int(mezo1.get())
     a = int(mezo1.get())
     b = int(mezo2.get())
-    c = a**2*math.pi*b
-    liter = c*0.001
+    terfogat = round (math.pi * a * a * b * 0.01)
+    liter=terfogat*0.01
     if liter <= bor:
         mezo5.delete(0, END)
         mezo5.insert(0,"Nem fér bele")
     else:
         mezo5.delete(0, END)
         mezo5.insert(0,"Belefér")
-    mennyi = liter-bor/10
-    telitettseg = a*b*c*liter
+    MUKODJMARMERTNEMIRJAKIIGAZABOLMENNYIHELYVANBENNE = liter - bor
+    telitettseg = round (bor * (100 / terfogat))
     mezo3.delete(0, END)
-    mezo3.insert(0,str(round(c, 0))+" cm3")
-    mezo4.delete(0, END)
-    mezo4.insert(0,str(round(liter, 0))+" l")
+    mezo3.insert(0,str(round(terfogat, 0))+" cm3")
     mezo6.delete(0, END)
-    mezo6.insert(0,str(round(mennyi))+" l")
+    mezo6.insert(0,str(round(MUKODJMARMERTNEMIRJAKIIGAZABOLMENNYIHELYVANBENNE))+" l")
     mezo7.delete(0, END)
     mezo7.insert(0,str(round(telitettseg, 0))+" %")
 
@@ -59,11 +57,6 @@ cimke.grid(row=4, column=0, sticky='e')
 mezo3=Entry(foablak)
 mezo3.grid(row=4, column=1)
 
-cimke=Label(foablak, text="Liter:")
-cimke.grid(row=5, column=0, sticky='e')
-
-mezo4=Entry(foablak)
-mezo4.grid(row=5, column=1)
 
 cimke=Label(foablak, text="Belefér-e a bor?")
 cimke.grid(row=6, column=0, sticky='e')
