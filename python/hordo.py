@@ -8,12 +8,12 @@ def terfogat():
     b = int(mezo2.get())
     terfogat = round (math.pi * a * a * b * 0.01)
     liter=terfogat*0.01
-    if liter <= bor:
-        mezo5.delete(0, END)
-        mezo5.insert(0,"Nem fér bele")
-    else:
+    if bor <= liter:
         mezo5.delete(0, END)
         mezo5.insert(0,"Belefér")
+    else:
+        mezo5.delete(0, END)
+        mezo5.insert(0,"Nem fér bele")
     MUKODJMARMERTNEMIRJAKIIGAZABOLMENNYIHELYVANBENNE = liter - bor
     telitettseg = round (bor * (100 / terfogat))
     mezo3.delete(0, END)
