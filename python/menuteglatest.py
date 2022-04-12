@@ -1,8 +1,10 @@
 from tkinter import *
 
+import math
+
 def nevjegy():
     abl2=Toplevel(foablak)
-    uz2=Message(abl2,text='Készítette: Tarr Gábor\nPiripócs\n2022.04.11', width=300)
+    uz2=Message(abl2,text='Készítette: Tarr Gábor\n2022.04.11', width=300)
     gomb2=Button(abl2,text='Kilép', command=abl2.destroy)
     uz2.pack()
     gomb2.pack()
@@ -94,8 +96,80 @@ def terfogat():
     mezo4.grid(row=5, column=2, sticky=W)
     abl3.mainloop()
 
+def hengerterfogat():
+    def szamit():
+        r=eval(mezo1.get())
+        m=eval(mezo2.get())
+        terfogat=r*r*math.pi*m
+        if r<=0:
+            mezo3.delete(0, END)
+            mezo3.insert(0, "Nem lehetséges")
+        elif m<=0:
+            mezo3.delete(0, END)
+            mezo3.insert(0, "Nem lehetséges")
+        else: 
+            mezo3.delete(0, END)
+            mezo3.insert(0, "A térfogat: "+str(terfogat))
+    abl4=Toplevel(foablak)
+    abl4.title('A henger térfogata')
+    abl4.minsize(width=300, height=100)
+    szoveg1=Label(abl4, text='r:')
+    szoveg2=Label(abl4, text='m:')
+    szoveg3=Label(abl4, text='Eredmény:')
+    gomb1=Button(abl4,text='Számítás', command=szamit)
+    gomb2=Button(abl4,text='Kilép', command=abl4.destroy)
+    mezo1=Entry(abl4)
+    mezo2=Entry(abl4)
+    mezo3=Entry(abl4)
+    szoveg1.grid(row=1)
+    szoveg2.grid(row=2)
+    szoveg3.grid(row=4)
+    gomb1.grid(row=5, column=2, sticky=W)
+    gomb2.grid(row=6, column=2, sticky=W)
+    mezo1.grid(row=1, column=2, sticky=W)
+    mezo2.grid(row=2, column=2, sticky=W)
+    mezo3.grid(row=4, column=2, sticky=W)
+    abl4.mainloop()
+
+def hengerfelszin():
+    def szamit():
+        r=eval(mezo1.get())
+        m=eval(mezo2.get())
+        felszin=2*r*r*math.pi+2*r*math.pi*m
+        if r<=0:
+            mezo3.delete(0, END)
+            mezo3.insert(0, "Nem lehetséges")
+        elif m<=0:
+            mezo3.delete(0, END)
+            mezo3.insert(0, "Nem lehetséges")
+        else: 
+            mezo3.delete(0, END)
+            mezo3.insert(0, "A felszín: "+str(felszin))
+
+    abl4=Toplevel(foablak)
+    abl4.title('A henger felszíne')
+    abl4.minsize(width=300, height=100)
+    szoveg1=Label(abl4, text='r:')
+    szoveg2=Label(abl4, text='m:')
+    szoveg3=Label(abl4, text='Eredmény:')
+    gomb1=Button(abl4,text='Számítás', command=szamit)
+    gomb2=Button(abl4,text='Kilép', command=abl4.destroy)
+    mezo1=Entry(abl4)
+    mezo2=Entry(abl4)
+    mezo3=Entry(abl4)
+    szoveg1.grid(row=1)
+    szoveg2.grid(row=2)
+    szoveg3.grid(row=4)
+    gomb1.grid(row=5, column=2, sticky=W)
+    gomb2.grid(row=6, column=2, sticky=W)
+    mezo1.grid(row=1, column=2, sticky=W)
+    mezo2.grid(row=2, column=2, sticky=W)
+    mezo3.grid(row=4, column=2, sticky=W)
+    abl4.mainloop()
+
+
 foablak=Tk()
-foablak.title('A téglatest adatai')
+foablak.title('A téglatest és a henger adatai')
 foablak.minsize(width=300, height=100)
 
 menusor=Frame(foablak)
@@ -114,6 +188,13 @@ teglatest=Menu(menu2)
 teglatest.add_command(label='Felszín', command=felszin, underline=0)
 teglatest.add_command(label='Térfogat', command=terfogat, underline=0)
 menu2.config(menu=teglatest)
+
+menu3=Menubutton(menusor, text='Henger', underline=0)
+menu3.pack(side=LEFT)
+henger=Menu(menu3)
+henger.add_command(label='Felszín', command=hengerfelszin, underline=0)
+henger.add_command(label='Térfogat', command=hengerterfogat, underline=0)
+menu3.config(menu=henger)
 
 
 
